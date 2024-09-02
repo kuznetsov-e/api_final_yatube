@@ -1,4 +1,4 @@
-# APY Yatube
+# API Yatube
 
 ## Описание
 
