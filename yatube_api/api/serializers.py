@@ -44,7 +44,7 @@ class FollowSerializer(serializers.ModelSerializer):
         if request_user == value:
             raise serializers.ValidationError(
                 'Нельзя подписаться на самого себя.')
-        if Follow.objects.filter(user=request_user, following=value).exists():
+        if request_user.follower.filter(following=value).exists():
             raise serializers.ValidationError(
                 'Вы уже подписаны на этого пользователя.'
             )
